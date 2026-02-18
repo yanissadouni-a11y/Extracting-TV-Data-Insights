@@ -1,0 +1,18 @@
+# Start coding here
+# Use as many cells as you need
+import pandas as pd
+import matplotlib.pyplot as plt
+halftime_musicians = pd.read_csv("datasets/halftime_musicians.csv")
+tv = pd.read_csv("datasets/tv.csv")
+super_bowls = pd.read_csv("datasets/super_bowls.csv")
+
+plt.figure()
+plt.plot(tv['super_bowl'],tv['avg_us_viewers'])
+plt.show()
+viewership_increased=True
+plusque40 = super_bowls[(super_bowls['winning_pts'] - super_bowls['losing_pts'] > 40)]
+difference=len(plusque40)
+difference
+songs_par_artiste = halftime_musicians.sort_values('num_songs', ascending=False)
+most_songs=songs_par_artiste['musician'].iloc[0]
+most_songs
